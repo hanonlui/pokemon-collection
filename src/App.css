@@ -36,3 +36,17 @@
     transform: rotate(360deg);
   }
 }
+
+.random-move {
+  position: absolute;
+  animation: randomMove 3s infinite;
+}
+
+@keyframes randomMove {
+  0% {
+    transform: translate(0, 0);
+  }
+  100% {
+    transform: translate(random(-20px, 20px), random(-20px, 20px));
+  }
+}
