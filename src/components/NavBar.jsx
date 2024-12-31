@@ -20,16 +20,16 @@ const NavBar = () => {
             <div className="collapse navbar-collapse" id="navbarTogglerRight">
                 <ul className="navbar-nav mr-auto mt-2 mt-lg-0">
                     <li className="nav-item active">
-                        <Link className="nav-link" to="/pokemon-collection">Home <span className="sr-only"></span></Link>
+                        <Link className="nav-link" to="/">Home <span className="sr-only"></span></Link>
                     </li>
                     <li className="nav-item">
-                        <Link className="nav-link" to="/pokemon-collection/favorite">Favorite</Link>
+                        <Link className="nav-link" to="/favorite">Favorite</Link>
                     </li>
                     <li className="nav-item">
-                        <Link className="nav-link" to="/pokemon-collection/random">Random Team</Link>
+                        <Link className="nav-link" to="/random">Random Team</Link>
                     </li>
                     <li className="nav-item">
-                        <Link className="nav-link" to="/pokemon-collection/contact">Contact Message</Link>
+                        <Link className="nav-link" to="/contact">Contact Message</Link>
                     </li>
                 </ul>
             </div>

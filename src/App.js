@@ -12,11 +12,11 @@ function App() {
     <div className="App">
       <NavBar/>
       <Routes>
-        <Route path='/pokemon-collection/' element={<HomePage/>}/>
-        <Route path='/pokemon-collection/favorite' element={<FavoritePage/>}/>
-        <Route path='/pokemon-collection/random' element={<RandomPage/>}/>
-        <Route path='/pokemon-collection/contact' element={<ContactPage/>}/>
-        <Route path='/pokemon-collection/*' element={<HomePage/>}/>
+        <Route path='/' element={<HomePage/>}/>
+        <Route path='/favorite' element={<FavoritePage/>}/>
+        <Route path='/random' element={<RandomPage/>}/>
+        <Route path='/contact' element={<ContactPage/>}/>
+        <Route path='/*' element={<HomePage/>}/>
       </Routes>
     </div>
   );
