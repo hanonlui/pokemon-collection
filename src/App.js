@@ -1,5 +1,6 @@
 import './App.css';
-import { Route, Routes, Navigate } from 'react-router-dom';
+import { Route, Navigate } from 'react-router-dom';
+import { Routes } from 'react-router-dom';
 import NavBar from './components/NavBar'
 import HomePage from './components/Home';
 import RandomPage from './components/Random';
@@ -15,6 +16,7 @@ function App() {
         <Route path='/pokemon-collection/favorite' element={<FavoritePage/>}/>
         <Route path='/pokemon-collection/random' element={<RandomPage/>}/>
         <Route path='/pokemon-collection/contact' element={<ContactPage/>}/>
+        <Route path='/pokemon-collection/*' element={<HomePage/>}/>
       </Routes>
     </div>
   );
