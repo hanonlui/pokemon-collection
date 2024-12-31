@@ -9,7 +9,7 @@ import 'bootstrap/dist/js/bootstrap';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-  <Roter>
+  <Roter basename="/pokemon-collection">
     <App />
   </Roter>
 );
