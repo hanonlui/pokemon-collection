@@ -50,7 +50,7 @@ const RandomPage = () => {
         fetchData();
       }, [ids]);
 
-    console.log(pokemons);
+    // console.log(pokemons);
 
     const handleImageClick_old = (id,name) => {
         if (window.confirm(`Are you sure you want to add [${name}] to your Favorite list?`)) {

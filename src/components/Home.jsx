@@ -26,7 +26,7 @@ const HomePage = () => {
         fetchData();
       }, [ids]);
 
-      console.log(pokemons);
+      // console.log(pokemons);
     return (
     <div>
       <h1>Your Lucky Pokémon in All generation</h1>
