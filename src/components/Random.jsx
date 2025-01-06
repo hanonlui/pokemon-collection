@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import Modal from 'react-modal';
+import { API_BASE_URL } from '../config'; 
 
 const RandomPage = () => {
     const [pokemons, setPokemons] = useState([]);
@@ -78,7 +79,7 @@ const RandomPage = () => {
 
     const handleFormSubmit = async (pidInput, descriptionInput, ratingInput,ownsInput) => {
       try{
-        const existingData = await fetch('http://localhost:5000/api/pokemonInfo').then(response => response.json());
+        const existingData = await fetch(`${API_BASE_URL}/pokemonInfo`).then(response => response.json());
         const isIdExists = existingData.some(item => item.pid == pidInput);
         if (isIdExists){
           alert('This pokemon already exists in your favourite list.');
@@ -90,7 +91,7 @@ const RandomPage = () => {
         return;
       }
         
-        const url = `http://localhost:5000/api/addPokemon`;
+        const url = `${API_BASE_URL}/addPokemon`;
 
         const bodyData = {};
           if (pidInput !== '') {bodyData.pid = pidInput;}

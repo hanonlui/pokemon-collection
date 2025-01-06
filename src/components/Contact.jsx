@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { API_BASE_URL } from '../config';  
 
 const ContactPage = () => {
     const [messages, setMessages] = useState([]);
@@ -6,7 +7,7 @@ const ContactPage = () => {
     useEffect(() => {
       const fetchData = async () => {
         try{
-            const response = await fetch('http://localhost:5000/api/messagesAll'); // Replace with your actual API endpoint
+            const response = await fetch(`${API_BASE_URL}/messagesAll`); // Replace with your actual API endpoint
             const data = await response.json();
             setMessages(data);
         } catch (err){

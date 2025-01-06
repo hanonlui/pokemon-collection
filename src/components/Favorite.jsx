@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import Modal from 'react-modal';
+import { API_BASE_URL } from '../config'; 
 
 const FavoritePage = () => {
     const [pokemons, setPokemons] = useState([]);
@@ -11,7 +12,7 @@ const FavoritePage = () => {
 
     const fetchBackendApiData = async () => {
       try{
-        const response = await fetch('http://localhost:5000/api/pokemonInfo');
+        const response = await fetch(`${API_BASE_URL}/pokemonInfo`);
         const data = await response.json();
         return data;
       } catch (err) {
@@ -100,10 +101,10 @@ const FavoritePage = () => {
 
         
         try{
-          const existingData = await fetch('http://localhost:5000/api/pokemonInfo').then(response => response.json());
+          const existingData = await fetch(`${API_BASE_URL}/pokemonInfo`).then(response => response.json());
           const _id = existingData.find(item => item.pid === pid)?._id;
           console.log(_id);
-          const response = await fetch(`http://localhost:5000/api/deletePokemon/${_id}`, {
+          const response = await fetch(`${API_BASE_URL}/deletePokemon/${_id}`, {
           method: 'DELETE'
             });
           if(response.status === 200){
@@ -136,7 +137,7 @@ const FavoritePage = () => {
     
         let _id = '';
         try{
-          const existingData = await fetch('http://localhost:5000/api/pokemonInfo').then(response => response.json());
+          const existingData = await fetch(`${API_BASE_URL}/pokemonInfo`).then(response => response.json());
           const isIdExists = existingData.some(item => item.pid == pid);
           _id = existingData.find(item => item.pid == pid)?._id;
           if (!isIdExists){
@@ -148,7 +149,7 @@ const FavoritePage = () => {
           return;
         }
 
-        const url = `http://localhost:5000/api/updatePokemon/${_id}`;
+        const url = `${API_BASE_URL}/updatePokemon/${_id}`;
 
         const bodyData = {};
           if (descriptionInput !== '') {bodyData.description = descriptionInput;}
